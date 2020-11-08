@@ -9,13 +9,16 @@ marp: true
 # アジェンダ
 * TDDとは
 * TDD開発の流れ
-* TDDのメリット
+* TDDがもたらす影響
 * プログラミングの流れ
-* 使用するフレームワーク、doctestについて
+* 使用するフレームワーク、pytestについて
 * サンプルプロジェクト
 * 開発要件1：レッド
 * 開発要件1：グリーン
 * 開発要件1：リファクタリング
+* TDDの批評
+* TDDが運用されたことで解決した問題
+* 総括
 * 参考リンク集
 
 ---
@@ -48,32 +51,18 @@ marp: true
 ---
 
 # pytestについて
-
+pytestは、小さなテストだけでなく、アプリケーションやライブラリの複雑な機能テストの作成をサポートするライブラリです。
 https://docs.pytest.org/en/stable/
 
 ---
-# doctestのコード例
+# pytestのコード例
 
 ```python
-import unittest
+def inc(x):
+    return x + 1
 
-class TestStringMethods(unittest.TestCase):
-
-    def test_upper(self):
-        self.assertEqual('foo'.upper(), 'FOO')
-
-    def test_isupper(self):
-        self.assertTrue('FOO'.isupper())
-        self.assertFalse('Foo'.isupper())
-
-    def test_split(self):
-        s = 'hello world'
-        self.assertEqual(s.split(), ['hello', 'world'])
-        with self.assertRaises(TypeError):
-            s.split(2)
-
-if __name__ == '__main__':
-    unittest.main()
+def test_answer():
+    assert inc(3) == 5
 ```
 
 ---
@@ -82,7 +71,7 @@ if __name__ == '__main__':
 あなたは多国通貨のレポートを出力するアプリ開発を担当するエンジニアです。
 下記要件の開発を担当しました。
 1. 単一通貨に対してかけ算ができる
-2. 2つの通貨の足し算ができる
+2. 2つの通貨の足し算ができる(TBA)
 
 ---
 # 開発要件1：レッド
@@ -164,6 +153,15 @@ https://twop.agile.esm.co.jp/what-practice-should-be-remain-if-you-stop-tdd-2390
 * プログラマ同士の問題共有
 * プログラムが期待通りに動作している事を確認
 https://www.facebook.com/notes/kent-beck/rip-tdd/750840194948847
+
+---
+
+# 総括
+* TDDは「動作する綺麗なコード」を書くことに焦点を向けたプラクティス
+* TDDのメリットデメリットは色々議論されているため、調べると面白かったです
+
+# 所感
+* 色々試した上で、プロジェクトや自分に合った開発プラクティスを考えて提唱していきたい
 
 ---
 
