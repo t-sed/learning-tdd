@@ -72,6 +72,7 @@ def test_answer():
 下記要件の開発を担当しました。
 1. 単一通貨に対してかけ算ができる
 2. 2つの通貨の足し算ができる(TBA)
+[サンプルリポジトリ](https://github.com/t-sed/learning-tdd)
 
 ---
 # 開発要件1：レッド
@@ -158,10 +159,11 @@ https://www.facebook.com/notes/kent-beck/rip-tdd/750840194948847
 
 # 総括
 * TDDは「動作する綺麗なコード」を書くことに焦点を向けたプラクティス
-* TDDのメリットデメリットは色々議論されているため、調べると面白かったです
+* レッド→グリーン→リファクタリングの流れ
 
 # 所感
-* 色々試した上で、プロジェクトや自分に合った開発プラクティスを考えて提唱していきたい
+* TDDのメリットデメリットは色々議論されているため、調べると面白かったです
+* 色々なプラクティスを試した上で、プロジェクトや自分に合った開発プラクティスを考えて提唱していけたら、エンジニアとしてのレベルも高まるのかなと思いました
 
 ---
 
@@ -171,7 +173,7 @@ https://www.facebook.com/notes/kent-beck/rip-tdd/750840194948847
 * [doctestの公式リンク](https://docs.python.org/ja/3/library/doctest.html)
 * [doctestとpytest等の使い分け](https://stackoverflow.com/questions/361675/python-doctest-vs-unittest)
 * [pytestの紹介記事](https://www.m3tech.blog/entry/pytest-summary#%E3%83%86%E3%82%B9%E3%83%88%E3%82%92%E6%9B%B8%E3%81%8F)
-* [TDDの批判まとめ][https://twop.agile.esm.co.jp/what-practice-should-be-remain-if-you-stop-tdd-239071f7102e]
+* [TDDの批判まとめ](https://twop.agile.esm.co.jp/what-practice-should-be-remain-if-you-stop-tdd-239071f7102e)
 * [TDD is dead. Long live testing.](https://yattom.hatenablog.com/entries/2014/04/24)
 
 ---
