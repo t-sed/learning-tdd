@@ -2,25 +2,26 @@ name: tdd
 
 on: [push]
 
+env:
+  PYTHON_VERSION: '3.x'
+  TEST_OUTPUT_DIR: report.html
+
 jobs:
   build:
-
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 3.x
+    - name: Set up Python ${{ env.PYTHON_VERSION }}
       uses: actions/setup-python@v2
       with:
         # セマンティックバージョン範囲の構文または Python バージョンの正確なバージョン
-        python-version: '3.x' 
+        python-version: ${{ env.PYTHON_VERSION }}
         # オプション - x64 または x86 アーキテクチャ、デフォルトは x64
         architecture: 'x64' 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8 pytest
+        pip install flake8 pytest pytest-html pytest-cov pytest-datadir pytest-dbfixtures
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8
       run: |
@@ -30,4 +31,10 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        python -m pytest
+        pytest --html=report.html
+    - name: Arcive test results
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: ${{ env.TEST_OUTPUT_DIR }}
+        path: ${{ env.TEST_OUTPUT_DIR }}
