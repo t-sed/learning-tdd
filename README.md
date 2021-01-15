@@ -1,3 +1,6 @@
+
+[![github-pytest](https://github.com/t-sed/learning-tdd/workflows/tdd/badge.svg)](https://github.com/t-sed/learning-tdd/actions?query=workflow%3Atdd)
+
 ---
 marp: true
 ---
